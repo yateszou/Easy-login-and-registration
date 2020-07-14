@@ -1,0 +1,23 @@
+
+*{
+    list-style: none;
+}
+#msg{
+    margin-top: 50px;
+    border-radius: 8px;
+}
+.omsg{
+    margin: 0 auto;
+}
+#msg_c{
+    overflow-y:auto;
+    max-height:290px;
+}
+#msg_c ul{
+    margin-top: 20px;
+}
+#msg_c li{
+    margin-top: 8px;
+    height: 38px;
+    line-height: 38px;
+}

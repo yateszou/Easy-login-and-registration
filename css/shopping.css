@@ -1,0 +1,21 @@
+
+.tb{
+  width: 80%;
+  margin: 0 auto;
+}
+table{
+  border-radius: 10px;
+  opacity: 0.8;
+  background: white;
+  /*border-collapse:separate;*/
+  /*border-spacing:10px 50px;*/
+  margin-top: 50px;
+  width:100%;
+}
+tr,td,th{
+  text-align: center;
+  border: 1px solid black;
+}
+td img{
+  width: 15%;
+}
