@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>zyc-留言</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/msg.css">
+    <link rel="stylesheet" href="live2d/css/live2d.css" />
+    <style>
+        .fakeimg {
+            height: 200px;
+            background: #aaa;
+        }
+        body{
+            background-image: url(img/bgdw.jpg);
+        }
+        .nav-fixed{
+        	position: fixed;
+        	z-index: 9999;
+        	width: 100%;
+        	top: 0;
+        }
+    </style>
+</head>
+<body>
+
+</script>
+
+<!--看板娘-->
+<div id="landlord">
+    <div class="message" style="opacity:0;position:fixed;right:0;bottom:250px;"></div>
+    <canvas id="live2d" width="280" height="250" class="live2d" style="position: fixed;right:0;bottom:0px;"></canvas>
+    <div class="hide-button">隐藏</div>
+    </div>
+
+    <script type="text/javascript" src="https://cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script type="text/javascript">
+  var message_Path = 'live2d/'
+  var home_Path = 'https://haremu.com/'
+</script>
+<script type="text/javascript" src="live2d/js/live2d.js"></script>
+<script type="text/javascript" src="live2d/js/message.js"></script>
+<script type="text/javascript">
+  loadlive2d("live2d", "live2d/model/tia/model.json");
+</script>
+
+<!-- 头部-->
+<div class="text-center header" style="margin-bottom:0;">
+    <h1 style="color: grey;">云商城online</h1>
+    <a href="#" style="color: grey;"><h5>广告banner招商中</h5></a>
+</div>
+<!--导航-->
+<script src="js/main.js"></script>
+
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <a href="index.html " class="navbar-brand"><i><img src="img/apple_logo.png" alt=""></i></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nav_top">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="nav_top">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a href="index.html" class="nav-link">首页</a>
+            </li>
+            <li class="nav-item">
+                <a href="shopping.html" class="nav-link">购物车</a>
+            </li>
+            <li class="nav-item">
+                <a href="msg.html" class="nav-link">网站留言</a>
+            </li>
+        </ul>
+    </div>
+    <div>
+        <a href="login.html">登录</a>
+        <a href="register.html">注册</a>
+    </div>
+</nav>
+<!--content-->
+<script>
+window.onload = function(){
+  var oMsg = document.getElementById("msg");//获取用户输入内容
+  var oBtn = document.getElementById("btn");//获取留言提交按钮
+  var oMsg_c = document.getElementById("msg_c");//留言展示列表
+  var oUl = document.createElement("ul");//创建留言板ol
+  oMsg_c.appendChild(oUl);
+  oBtn.onclick = function(){
+    //判断输入内容是否为空
+    if(oMsg.value==""){
+    	alert("输入内容为空！");
+    }else{
+    //获取时间
+    var obj = new Date();
+    var hour=obj.getHours();
+    	hour=hour>9?hour:"0"+hour;
+    var minute=obj.getMinutes();
+    	minute=minute>9?minute:"0"+minute;
+    var second=obj.getSeconds();
+    	second=second>9?second:"0"+second;
+    var sj = hour+":"+minute+":"+second;
+    
+    var sVal = oMsg.value;
+    var oli = document.createElement("li");
+    oli.innerHTML = sVal + "----时间：" + sj + " <button class='btn btn-danger fr' value='' style=''>删除</button>";
+    var oli1 = oUl.getElementsByTagName("li")
+    if(oli1.length>0){
+      oUl.insertBefore(oli,oli1[0])
+    }else{
+      oUl.appendChild(oli);
+    }
+    oMsg.value='';
+    
+      var oSpan = document.getElementsByTagName("button");
+      for(var i=0; i<oSpan.length; i++){
+        oSpan[i].onclick = function(){
+          oUl.removeChild(this.parentNode);
+        }
+      }
+    }
+  }
+}  
+</script>
+
+<div class="container"style="width: 100%;height: 520px;">
+    <div class="row">
+        <div class="col-sm-12 col-md-8 omsg clearfix" >
+            <br /><input id="msg" type="text" size="10" value="" maxlength="30" placeholder="请输入留言内容,最多三十个字符" style="height: 200px;width:100%;"><br  />
+			<br /><input id="btn" class="btn btn-success" type="button" value="留言">
+			<div id="msg_c"></div>
+        </div>
+    </div>
+</div>
+
+<!--底部-->
+<div class="text-center footer" style="margin-bottom: 0;background: black;opacity: 0.5;height: 100px;">
+    <br /><a href=""><p style="color:white">广告位招商中</p></a>
+</div>
+</body>
+</html>

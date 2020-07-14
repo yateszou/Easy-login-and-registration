@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>zyc-首页</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="live2d/css/live2d.css" />
+    <style>
+        .fakeimg {
+            height: 200px;
+            background: #aaa;
+            margin-top: 20px;
+        }
+        .nav-fixed{
+        	position: fixed;
+        	z-index: 9999;
+        	width: 100%;
+        	top: 0;
+        }
+    </style>
+</head>
+<body>
+	
+	<!--
+    	作者：offline
+    	时间：2020-06-09
+    	描述：判断用户UA
+    -->
+		<!--<script type="text/javascript">-->
+            <!--function browserRedirect() {-->
+                <!--var sUserAgent = navigator.userAgent.toLowerCase();-->
+                <!--var bIsIpad = sUserAgent.match(/ipad/i) == "ipad";-->
+                <!--var bIsIphoneOs = sUserAgent.match(/iphone os/i) == "iphone os";-->
+                <!--var bIsMidp = sUserAgent.match(/midp/i) == "midp";-->
+                <!--var bIsUc7 = sUserAgent.match(/rv:1.2.3.4/i) == "rv:1.2.3.4";-->
+                <!--var bIsUc = sUserAgent.match(/ucweb/i) == "ucweb";-->
+                <!--var bIsAndroid = sUserAgent.match(/android/i) == "android";-->
+                <!--var bIsCE = sUserAgent.match(/windows ce/i) == "windows ce";-->
+                <!--var bIsWM = sUserAgent.match(/windows mobile/i) == "windows mobile";-->
+                	<!--if (bIsIpad) {-->
+                        <!--alert("您的浏览设备为：ipad，响应式可能有所缺陷");-->
+                    <!--}else if(bIsIphoneOs){-->
+                    	<!--alert("您的浏览设备为：iphone，响应式可能有所缺陷");-->
+                    <!--}else if(bIsAndroid){-->
+                        <!--alert("您的浏览设备为：android，响应式可能有所缺陷");-->
+                    <!--}-->
+                        <!--else {-->
+                    <!--alert("您的浏览设备为：pc，可正常访问");-->
+                        <!--}-->
+                    <!--}-->
+                    <!--browserRedirect();-->
+		<!--</script>-->
+
+    <!--看板娘-->
+    <div id="landlord">
+        <div class="message" style="opacity:0;position:fixed;right:0;bottom:250px;"></div>
+        <canvas id="live2d" width="280" height="250" class="live2d" style="position: fixed;right:0;bottom:0px;"></canvas>
+        <div class="hide-button">隐藏</div>
+    </div>
+
+    <script type="text/javascript" src="https://cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+    <script type="text/javascript">
+      var message_Path = 'live2d/'
+      var home_Path = 'https://haremu.com/'
+    </script>
+    <script type="text/javascript" src="live2d/js/live2d.js"></script>
+    <script type="text/javascript" src="live2d/js/message.js"></script>
+    <script type="text/javascript">
+      loadlive2d("live2d", "live2d/model/tia/model.json");
+    </script>
+
+<!-- 头部-->
+<div class="jumbotron text-center header" style="margin-bottom:0;">
+    <h1>云商城online</h1>
+    <a href="#"><h5>广告banner招商中</h5></a>
+</div>
+<!--导航-->
+<script src="js/main.js"></script>
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <a href="index.html" class="navbar-brand"><i><img src="img/apple_logo.png" alt=""></i></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nav_top">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="nav_top">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a href="#" class="nav-link">首页</a>
+            </li>
+            <li class="nav-item">
+                <a href="shopping.html" class="nav-link">购物车</a>
+            </li>
+            <li class="nav-item">
+                <a href="msg.html" class="nav-link">网站留言</a>
+            </li>
+        </ul>
+    </div>
+    <div>
+        <a href="login.html" class="login" target="_blank";>登录</a>
+        <a href="register.html">注册</a>
+    </div>
+</nav>
+<!--内容-->
+<div class="container" style="margin-top: 30px;">
+    <div class="row">
+        <div class="col-sm-4">
+            <h2>热销产品</h2>
+            <a href=""><h5>AiPhone 18</h5></a>
+            <div class="fakeimg"><img src="img/iphone12.jpg" class="img-l"/></div>
+            <p>AiPhone系列全新划时代史诗巨作！乔不斯...</p>
+            <h3>合作伙伴</h3>
+            <p>友商</p>
+            <ul class="nav nav-pills flex-column">
+                <li class="nav-item">
+                    <a href="https://www.apple.com.cn/" class="nav-link active">Apple</a>
+                </li>
+                <li class="nav-item">
+                    <a href="https://www.huawei.com/" class="nav-link">HUAWEI</a>
+                </li>
+                <li class="nav-item">
+                    <a href="http://www.mi.com/" class="nav-link">xiaomi</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link disabled">以上都没有(⊙o⊙)…</a>
+                </li>
+            </ul>
+            <hr class="d-sm-none" />
+        </div>
+        <div class="col-sm-8">
+            <h2>最low产品</h2>
+            <a href=""><h5>小米10</h5></a>
+            <div class="fakeimg">
+                <img src="img/xm10_lunbo01.jpg" alt="" style="height:200px;float: left;"/>
+                <p>骁龙865处理器 /1亿像素8K电影相机，50倍数字变焦，10倍混合光学变焦 /双模5G/50W极速闪充+30W无线闪充+10W无线反充 /4500mAh大电量 </p>
+            </div>
+            <h2>最new产品</h2>
+            <a href=""><h5>小米10 Pro</h5></a>
+            <div class="fakeimg">
+            	<img src="img/xm10pro_lunbo01.jpg" alt="" style="height:200px;float: left;"/>
+            	<p>骁龙865处理器 /1亿像素8K电影相机，50倍数字变焦，10倍混合光学变焦 /双模5G/50W极速闪充+30W无线闪充+10W无线反充 /4500mAh大电量 </p>
+            </div>
+            <h2>最ugly产品</h2>
+            <a href=""><h5>Redmi K30</h5></a>
+            <div class="fakeimg">
+                <img src="img/redmi-k30-1.jpg" alt="" style="height:200px;float: left;"/>
+                <p>骁龙865处理器 /1亿像素8K电影相机，50倍数字变焦，10倍混合光学变焦 /双模5G/50W极速闪充+30W无线闪充+10W无线反充 /4500mAh大电量 </p>
+            </div>
+            <h2>最zz产品</h2>
+            <a href=""><h5>Redmi K30 Pro</h5></a>
+            <div class="fakeimg">
+                <img src="img/redmi-k30-pro-1.jpg" alt="" style="height:200px;float: left;"/>
+                <p>骁龙865处理器 /1亿像素8K电影相机，50倍数字变焦，10倍混合光学变焦 /双模5G/50W极速闪充+30W无线闪充+10W无线反充 /4500mAh大电量 </p>
+            </div>
+        </div>
+    </div>
+</div>
+<!--底部-->
+<div class="jumbotron text-center footer" style="margin-bottom: 0;">
+    <p>底部内容神马都没有(⊙o⊙)…</p>
+</div>
+</body>
+</html>
