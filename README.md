@@ -3,8 +3,6 @@
 
 + 做了简易的前端样式布局，并且做了简易的移动端响应式布局
 
-+ 基于微信原生小程序的商城项目
-
 ![demo](https://www.velpro.cn/child/project/img/sc.png)
 
 + 如有问题请联系我
